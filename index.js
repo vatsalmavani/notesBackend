@@ -22,11 +22,11 @@ let notes = [
 ];
 
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 const app = express();
 
 app.use(express.json());
-// app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors());
 
 const loggerMiddleware = (req, res, next) => {
   console.log("request body: (from logger middleware): ", req.body);
@@ -78,4 +78,7 @@ const unknownEndpoint = (req, res) => {
 };
 app.use(unknownEndpoint);
 
-app.listen(3001);
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
