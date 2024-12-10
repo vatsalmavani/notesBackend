@@ -22,11 +22,11 @@ let notes = [
 ];
 
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 const app = express();
 
 app.use(express.json());
-// app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "https://notesbackend-6aha.onrender.com:10000" }));
 
 const loggerMiddleware = (req, res, next) => {
   console.log("request body: (from logger middleware): ", req.body);
