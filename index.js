@@ -34,6 +34,8 @@ const loggerMiddleware = (req, res, next) => {
 };
 app.use(loggerMiddleware);
 
+app.use(express.static("dist"));
+
 app.get("/", (req, res) => res.send("hello world"));
 
 app.get("/api/notes", (req, res) => res.json(notes));
