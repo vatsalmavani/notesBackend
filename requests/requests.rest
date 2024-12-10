@@ -1,0 +1,36 @@
+GET http://localhost:3001/
+###
+GET http://localhost:3001/api/notes
+###
+GET http://localhost:3001/api/notes/2
+###
+GET http://localhost:3001/api/notes/20
+###
+DELETE http://localhost:3001/api/notes/2
+###
+DELETE http://localhost:3001/api/notes/20
+###
+POST http://localhost:3001/api/notes/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+###
+POST http://localhost:3001/api/notes/ HTTP/1.1
+content-type: application/json
+
+{
+    "content": "sample content",
+    "important": "true"
+}
+###
+POST http://localhost:3001/api/notes HTTP/1.1
+content-type: application/json
+
+{
+    "content": "sample content"
+}
+###
+GET http://localhost:3001/hello_world
